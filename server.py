@@ -7,7 +7,9 @@ app = Flask("__name__")
 def sent_dectector():
     text_to_analyze = request.args.get('textToAnalyze')
     response = emotion_detector(text_to_analyze)
-    return "For the given statement, the system response is {}.".format(str(response)[1:-1])
+    if(response['dominant_emotion'] is None):
+        return "Invalid text! Please try again!"
+    return f"For the given statement, the system response is {str(response)[1:-1]}"
 
 @app.route("/")
 def render_index_page():
