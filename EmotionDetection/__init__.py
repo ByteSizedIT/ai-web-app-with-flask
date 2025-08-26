@@ -1,4 +1,4 @@
-from . import emotion_detector
+from . import emotion_detection
 
 '''To usepackage, from python shell, run:
 >>>from EmotionDetection.emotion_detection import emotion_detector    
